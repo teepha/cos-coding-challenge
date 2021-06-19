@@ -1,8 +1,10 @@
-/**
- * This service describes an interface to access auction data from the CarOnSale API.
- */
-export interface ICarOnSaleClient {
+export interface ICarOnSaleClientStub {
+  getStubRunningAuctions(): Promise<BuyerAuctions[]>;
+}
 
-    getRunningAuctions(): Promise<any /* TODO: Introduce a type */>
-
+export interface BuyerAuctions {
+  numBids: number;
+  currentHighestBidValue: number;
+  minimumRequiredAsk: number;
+  [prop: string]: any;
 }
